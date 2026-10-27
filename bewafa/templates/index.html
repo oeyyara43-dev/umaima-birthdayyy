@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08051b">
+    <title>For Umaima 💜 | A Little Universe</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <canvas id="stars"></canvas>
+    <div class="nebula"></div>
+
+    <button id="musicBtn" class="music-btn" aria-label="Toggle music">
+        ♫ Music Off
+    </button>
+
+    <main class="universe">
+
+        <section class="scene active" id="scene1">
+            <p class="eyebrow">A LITTLE UNIVERSE, MADE FOR YOU</p>
+            <h1 class="glow-title">Somewhere<br>Beyond the Stars</h1>
+            <p class="subtitle">A little magic is waiting for you...</p>
+            <button class="primary-btn" onclick="nextScene()">
+                Enter the Universe ✦
+            </button>
+        </section>
+
+        <section class="scene" id="scene2">
+            <div class="portal">
+                <div class="portal-ring ring-one"></div>
+                <div class="portal-ring ring-two"></div>
+                <div class="portal-core">✧</div>
+            </div>
+            <h2>A universe full of wonders...</h2>
+            <p>And one very special reason to celebrate.</p>
+            <button class="primary-btn" onclick="nextScene()">Continue ✨</button>
+        </section>
+
+        <section class="scene" id="scene3">
+            <p class="eyebrow">THIS MOMENT IS YOURS</p>
+            <h1 class="birthday-title">HAPPY<br>BIRTHDAY</h1>
+            <h2 class="name-title">UMAIMA 💜</h2>
+            <p class="subtitle">Today, the stars shine a little brighter for you.</p>
+            <button class="primary-btn" onclick="nextScene()">Your Surprise Awaits 🎁</button>
+        </section>
+
+        <section class="scene" id="scene4">
+            <div class="gift" id="gift" role="button" tabindex="0"
+                 aria-label="Open the birthday gift" onclick="openGift()">
+                <div class="gift-lid"></div>
+                <div class="gift-box">
+                    <div class="gift-ribbon"></div>
+                    <div class="gift-bow">∞</div>
+                </div>
+                <p class="gift-hint">Tap the gift to open it</p>
+            </div>
+            <h2>A little something, just for you</h2>
+            <button class="primary-btn" onclick="openGift()">Open Your Gift 💝</button>
+            <div id="giftMessage" class="gift-message hidden">
+                <h2>Surprise, Umaima! ✨</h2>
+                <p>You deserve a universe of happiness.</p>
+                <button class="primary-btn" onclick="nextScene()">One More Surprise →</button>
+            </div>
+        </section>
+
+        <section class="scene" id="scene5">
+            <div class="letter">
+                <span class="letter-icon">💌</span>
+                <p class="eyebrow">A LITTLE NOTE FOR YOU</p>
+                <h2>Dear Umaima,</h2>
+                <p>
+                    If I could give you one thing in this universe,
+                    it would be the ability to see yourself through
+                    the eyes of the people who care about you.
+                </p>
+                <p>
+                    May your days be filled with laughter, your dreams
+                    find their way to you, and your heart always find
+                    a reason to smile.
+                </p>
+                <p class="signature">You deserve all the beautiful things. 💜</p>
+            </div>
+            <button class="primary-btn" onclick="nextScene()">Make a Wish ✨</button>
+        </section>
+
+        <section class="scene" id="scene6">
+            <div class="wish-stars">✦　⋆　✧　⋆　✦</div>
+            <h1 class="glow-title">Make a Wish, Umaima</h1>
+            <p class="subtitle">Close your eyes. Imagine something beautiful.</p>
+            <button class="primary-btn" onclick="launchFireworks()">
+                My Wish Is Made 🌠
+            </button>
+            <p id="wishMessage" class="subtitle hidden">
+                May the universe bring you closer to every beautiful dream. 💜
+            </p>
+            <button class="text-btn" onclick="restartExperience()">↻ Experience Again</button>
+        </section>
+
+        <nav class="scene-controls" aria-label="Birthday scenes">
+            <button onclick="previousScene()" aria-label="Previous scene">←</button>
+            <span id="sceneCounter">01 / 06</span>
+            <button onclick="nextScene()" aria-label="Next scene">→</button>
+        </nav>
+
+    </main>
+
+    <audio id="birthdayMusic" loop preload="none">
+        <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+    </audio>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
